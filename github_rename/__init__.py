@@ -1,5 +1,7 @@
 import sys
 
+name = "github-rename"
+
 
 def main():
     from .clidriver import main
