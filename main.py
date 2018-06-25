@@ -40,12 +40,13 @@ def github_rename(name_before, name_after, file_name, bak=True):
 @click.command()
 @click.option('f', '-f', '--from', prompt='Old username', help='Name to change from')
 @click.option('t', '-t', '--to', prompt='New username', help='Name to change to')
+@click.option('--bak/--no-bak', default=True)
 @click.help_option('-h', '--help')
-def main(f, t):
+def main(f, t, bak):
     file_name = './.git/config'
-    github_rename(name_before=f, name_after=t, file_name=file_name)
+    github_rename(name_before=f, name_after=t, file_name=file_name, bak=bak)
     file_name = './.gitmodules'
-    github_rename(name_before=f, name_after=t, file_name=file_name)
+    github_rename(name_before=f, name_after=t, file_name=file_name, bak=bak)
 
 
 if __name__ == '__main__':
