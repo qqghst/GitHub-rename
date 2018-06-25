@@ -3,6 +3,9 @@ from pathlib import Path
 
 import click
 
+VERSION = '0.1'
+PROG_NAME = 'GitHub-rename'
+
 
 def github_rename(name_before, name_after, file_name, bak=True):
     if not Path(file_name).is_file():
@@ -38,9 +41,10 @@ def github_rename(name_before, name_after, file_name, bak=True):
 
 
 @click.command()
-@click.option('f', '-f', '--from', prompt='Old username', help='Name to change from')
-@click.option('t', '-t', '--to', prompt='New username', help='Name to change to')
-@click.option('--bak/--no-bak', default=True)
+@click.option('f', '-f', '--from', prompt='Old username', help='Name to change from.')
+@click.option('t', '-t', '--to', prompt='New username', help='Name to change to.')
+@click.option('--bak/--no-bak', default=True, help='Make .bak file for backup. (Defalult is True)')
+@click.version_option(version=VERSION, prog_name=PROG_NAME)
 @click.help_option('-h', '--help')
 def main(f, t, bak):
     file_name = './.git/config'
