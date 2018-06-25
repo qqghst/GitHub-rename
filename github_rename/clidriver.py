@@ -47,6 +47,16 @@ def github_rename(name_before, name_after, file_name, bak=True):
 @click.version_option(version=VERSION, prog_name=PROG_NAME)
 @click.help_option('-h', '--help')
 def main(f, t, bak):
+    '''GitHub-rename
+
+    \b
+    This cli tool helps you to rename your github urls
+    in .git/config and .gitmodules.
+
+    \b
+    Please help us improve by opening issues
+    in https://github.com/qqghst/GitHub-rename
+    '''
     file_name = './.git/config'
     github_rename(name_before=f, name_after=t, file_name=file_name, bak=bak)
     file_name = './.gitmodules'
