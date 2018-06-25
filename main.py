@@ -1,5 +1,5 @@
+import os
 import re
-from pathlib import Path
 
 import click
 
@@ -8,7 +8,7 @@ PROG_NAME = 'GitHub-rename'
 
 
 def github_rename(name_before, name_after, file_name, bak=True):
-    if not Path(file_name).is_file():
+    if not os.path.isfile(file_name):
         print(f'{file_name} does not exist.\n')
         return
 
