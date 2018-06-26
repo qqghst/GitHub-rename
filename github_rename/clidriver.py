@@ -31,7 +31,7 @@ def github_rename(name_before, name_after, file_name, bak=True):
         for l in lines:
             if pattern.search(l):
                 matched += 1
-                new_l = pattern.sub(f'https://githum.com/{name_after}/', l)
+                new_l = pattern.sub(f'https://github.com/{name_after}/', l)
                 f.write(new_l)
                 print(l, end='')
                 print('->', new_l)
