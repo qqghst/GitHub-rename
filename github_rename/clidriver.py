@@ -3,7 +3,7 @@ import re
 
 import click
 
-VERSION = '0.1'
+VERSION = '0.1.1'
 PROG_NAME = 'GitHub-rename'
 
 
